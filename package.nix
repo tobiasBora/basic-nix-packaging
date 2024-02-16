@@ -7,7 +7,7 @@ buildNpmPackage rec {
 
   src = ./.;
 
-  npmDepsHash = "sha256-7KTLger7QZo18SuGKuM6WsFLBkGhTiSZ+2t60VVBuPg=";
+  npmDepsHash = "sha256-RcAhQ14ohDQDW+PhW9wvFdyoWvFPiaVE0XpB4WTuysE=";
 
   # Useful for debugging, just run "electron ."
   nativeBuildInputs = [
