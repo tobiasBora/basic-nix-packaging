@@ -17,3 +17,5 @@ $ nix-shell
 $ electron .
 ```
 
+If you want more examples, I created other branches:
+- the branch `electron-forge` contains a similar project that works with `electron-forge` (basically, no change, except for the hash).
