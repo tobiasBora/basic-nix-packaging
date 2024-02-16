@@ -1,8 +1,8 @@
 // main.js
-
 // Modules to control application life and create native browser window
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, ipcMain } = require('electron')
 const path = require('node:path')
+const jester = require('jester-jokes');
 
 const createWindow = () => {
   // Create the browser window.
@@ -25,6 +25,7 @@ const createWindow = () => {
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.whenReady().then(() => {
+  ipcMain.handle('joke', () => jester.getJoke())
   createWindow()
 
   app.on('activate', () => {

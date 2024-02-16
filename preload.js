@@ -1,4 +1,8 @@
 // preload.js
+// https://www.electronjs.org/docs/latest/tutorial/tutorial-preload
+const { contextBridge, ipcRenderer } = require('electron')
+
+/* const jester = require('jester-jokes'); */
 
 // All the Node.js APIs are available in the preload process.
 // It has the same sandbox as a Chrome extension.
@@ -12,4 +16,9 @@ window.addEventListener('DOMContentLoaded', () => {
     replaceText(`${dependency}-version`, process.versions[dependency])
     /* replaceText(`${dependency}-version`, process.versions[dependency]) */
   }
+})
+
+// Communicate with priviledged main.
+contextBridge.exposeInMainWorld('versions', {
+  joke: () => ipcRenderer.invoke('joke')
 })
